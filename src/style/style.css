@@ -1,9 +1,22 @@
 @import "../style/modern-normalize.css";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .icons {
-  width: 40px;
+  width: 80px;
   height: auto;
   cursor: pointer;
+}
+
+#contacto-icon {
+  transition: transform 0.2s;
+}
+
+#contacto-icon:hover {
+  opacity: 0.8;
+  transform: scale(1.2);
 }
 
 .wrapper {
@@ -12,58 +25,78 @@
 }
 
 .about-me {
-  grid-row: 1 / 1;
+  grid-row: 2 / 2;
   display: grid;
-  grid-template-columns: 0.59fr 1fr;
+  grid-template-columns: 0.7fr 1fr;
   justify-items: center;
   align-items: center;
   background: url(../img/wave.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  user-select: none;
 }
 
 .about-img {
   justify-self: right;
-  margin-top: 60px;
+  margin-top: 90px;
+  transition: transform 0.2s;
+}
+
+.about-img:hover {
+  transform: scale(1.05);
 }
 
 .about-image {
-  max-width: 500px;
+  max-width: 450px;
   max-height: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .about-content {
   background-color: aliceblue;
-  max-width: 800px;
+  max-width: 700px;
   justify-self: left;
   padding-left: 30px;
   padding-bottom: 30px;
   padding-right: 60px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin-top: 50px;
+  margin-top: 110px;
+  transition: transform 0.2s;
+}
+
+.about-content:hover {
+  transform: scale(1.05);
 }
 
 .about-content > h1 {
   font-family: "Playfair Display", Times, serif;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 400;
-  color: rgb(0, 0, 0);
+  color: rgba(0, 0, 0, 0.656);
 }
 
 .about-content > p {
-  font-family: "Roboto", Times, serif;
+  font-family: "Playfair Display", Times, serif;
   font-size: 25px;
-  color: rgba(0, 0, 0, 0.584);
+  color: rgba(0, 0, 0, 0.988);
   word-spacing: 1px;
   line-height: 40px;
+  font-weight: 500;
 }
 
-.about-icons {
+.about-contact {
   display: flex;
   justify-content: right;
   gap: 20px;
+}
+
+.about-contact > p {
+  font-family: "Playfair Display", Times, serif;
+  font-size: 25px;
+  word-spacing: 1px;
+  line-height: 40px;
+  font-weight: 700;
 }
 
 .my-work > h1 {
@@ -72,7 +105,7 @@
 }
 
 .my-work {
-  grid-row: 2 / 2;
+  grid-row: 3 / 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,28 +122,41 @@
 .project-cards {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(3, 380px);
+  grid-template-columns: repeat(3, 400px);
   gap: 50px;
   padding-bottom: 100px;
 }
 
 .project-cards h1 {
   font-family: "Playfair Display", Times, serif;
-  font-size: 25px;
-  font-weight: 300;
-  grid-column: 1 / 2;
+  font-size: 23px;
+  font-weight: 500;
+  grid-column: 1 / 4;
   grid-row: 2 / 3;
   padding-left: 30px;
+  padding-top: 10px;
+  text-align: center;
 }
 
 .project-cards p {
   font-family: "Roboto", Times, serif;
-  font-size: 18px;
+  font-size: 15px;
   color: rgba(0, 0, 0, 0.707);
   grid-column: 1 / 2;
   grid-row: 3 / 4;
   padding-left: 30px;
-  padding-bottom: 20px;
+  text-align: center;
+}
+
+.project-cards a {
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
+}
+
+.project-cards a:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
 }
 
 .project-1-content,
@@ -125,10 +171,11 @@
   align-items: center;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
 }
 
 .project-img {
-  width: 380px;
+  width: 400px;
   height: 300px;
   grid-column: 1 / 4;
   grid-row: 1 / 2;
@@ -158,7 +205,7 @@
 }
 
 .prices {
-  grid-row: 3 / 4;
+  grid-row: 4 / 4;
   background-color: #f9f9f9;
   padding: 50px 0;
 }
@@ -171,15 +218,21 @@
   background-color: #ffffff;
   border-radius: 10px;
   padding: 40px;
+  user-select: none;
+  transition: transform 0.2s;
+}
+
+.prices-content:hover {
+  transform: scale(1.05);
 }
 
 .prices-content h1 {
   font-family: "Playfair Display", Times, serif;
-  font-size: 40px;
-  font-weight: 400;
-  color: #333333;
   text-align: center;
   margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: 400;
+  color: rgb(0, 0, 0);
 }
 
 .prices-content table {
@@ -225,7 +278,7 @@
 }
 
 .contact-me {
-  grid-row: 4 / 4;
+  grid-row: 5 / 5;
   background-color: #3a8fe9;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -244,6 +297,12 @@
   padding-left: 50px;
 }
 
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .contact-info {
   font-family: "Roboto", Times, serif;
   font-size: 25px;
@@ -257,15 +316,16 @@
   color: aliceblue;
 }
 
-.contact-image {
+.whatsapp-img {
   max-width: 600px;
   max-height: auto;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 2%;
+  transition: transform 0.2s;
 }
 
-.contact-img {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
+.whatsapp-img:hover {
+  transform: scale(1.05);
 }
 
 .contact-phone {
@@ -299,7 +359,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #25d366;
+  background-color: #22ae55;
   color: white;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
@@ -348,6 +408,52 @@
   width: 34px;
   height: auto;
   margin-right: 10px;
+}
+
+.footer {
+  background-color: aliceblue;
+  color: rgba(0, 0, 0, 0.429);
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px -5px 15px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links li {
+  margin: 0;
+}
+
+.footer-links a {
+  font-family: "Roboto", Times, serif;
+  font-size: 18px;
+  color: #3a8fe9;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-family: "Roboto", Times, serif;
+  font-size: 14px;
+  margin-top: 10px;
+  margin: 0;
+  padding-top: 10px;
 }
 
 /* Mobile version */
